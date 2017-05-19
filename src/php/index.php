@@ -1,8 +1,9 @@
 <?php
-$a=1;
-$b=2;
-$c=$a+$b;
-echo $c;
+
+$result = 'あああああああああ';
+
+
+
 ?>
 <!DOCTYPE html>
 
@@ -13,6 +14,12 @@ echo $c;
         <title>kidsQ｜クイズアプリ</title>
     </head>
     <body>
-        <p>テスト</p>
+        <form action="<?= basename(__FILE__) ?>" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="button" value="押す">
+            <hr>
+            <div>
+                <?= $result ?>
+            </div>
+        </form>
     </body>
 </html>
