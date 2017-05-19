@@ -9,6 +9,7 @@ echo $c;
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
         <title>kidsQ｜クイズアプリ</title>
     </head>
     <body>
