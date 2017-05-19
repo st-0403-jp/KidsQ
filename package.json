@@ -1,0 +1,21 @@
+{
+  "name": "kidsQ",
+  "version": "0.0.1",
+  "description": "kids play quiz",
+  "main": "index.php",
+  "dependencies": {
+    "babel": "~6.3.13"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "~1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Satoru Tanaka & Professor Hayashi",
+  "license": "ISC"
+}
