@@ -10,12 +10,15 @@
     "gulp": "~3.9.1",
     "gulp-clean": "~0.3.1",
     "gulp-concat": "~2.6.0",
+    "gulp-ejs": "^3.0.1",
     "gulp-less": "^3.0.5",
     "gulp-uglify": "~1.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp php & gulp less"
+    "prestart": "gulp ejs & gulp less & gulp lib",
+    "start": "gulp watch",
+    "build": "gulp ejs & gulp less"
   },
   "author": "Satoru Tanaka & Professor Hayashi",
   "license": "ISC"
