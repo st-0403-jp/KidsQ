@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <%- include('./head', {title: 'テスト', css: 'css/common.css'}) %>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="田中暁">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="lib/sanitize.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <title><%= title %></title>
+    </head>
     <body>
         <%- include('./header', {}) %>
+        <main>
+            <%- include('./main/' + file, {}) %>
+        </main>
+        <%- include('./footer', {}) %>
     </body>
 </html>

@@ -5,15 +5,33 @@ var clean = require('gulp-clean');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var ejs = require('gulp-ejs');
+var rename = require('gulp-rename');
+
+var ejsMain = [
+    {
+        title: 'トップ',
+        fileName: 'index'
+    },
+    {
+        title: 'とは',
+        fileName: 'about'
+    }
+];
 
 var ejsData = {
     data: 'ejsejsejs'
 };
 
 gulp.task('ejs', function () {
-    return gulp.src(['src/ejs/layout.ejs'], {base: 'src/ejs'})
-            .pipe(ejs(ejsData, null, {ext: '.php'}))
+    return ejsMain.forEach(function (file, ejsMainIndex) {
+        gulp.src(['src/ejs/layout.ejs'])
+            .pipe(ejs({
+                file: file.fileName,
+                title: file.title
+            }))
+            .pipe(rename('main/' + file.fileName + '.php'))
             .pipe(gulp.dest('build'));
+    });
 });
 gulp.task('less', function () {
     return gulp.src('src/less/common.less')
