@@ -18,10 +18,6 @@ var ejsMain = [
     }
 ];
 
-var ejsData = {
-    data: 'ejsejsejs'
-};
-
 gulp.task('ejs', function () {
     return ejsMain.forEach(function (file, ejsMainIndex) {
         gulp.src(['src/ejs/layout.ejs'])
@@ -39,7 +35,7 @@ gulp.task('less', function () {
             .pipe(gulp.dest('build/css'));
 });
 gulp.task('watch', function () {
-    gulp.watch(['src/ejs/*.ejs'], ['ejs']);
+    gulp.watch(['src/ejs/*.ejs', 'src/ejs/main/*.ejs'], ['ejs']);
     gulp.watch(['src/less/*.less'], ['less']);
 });
 gulp.task('clean', function () {
