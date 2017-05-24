@@ -7,6 +7,8 @@ var less = require('gulp-less');
 var ejs = require('gulp-ejs');
 var rename = require('gulp-rename');
 
+var cashClearTime = new Date().getTime();
+
 var ejsMain = [
     {
         title: 'トップ',
@@ -23,7 +25,8 @@ gulp.task('ejs', function () {
         gulp.src(['src/ejs/layout.ejs'])
             .pipe(ejs({
                 file: file.fileName,
-                title: file.title
+                title: file.title,
+                cashClearQuery: cashClearTime
             }))
             .pipe(rename('main/' + file.fileName + '.php'))
             .pipe(gulp.dest('build'));
