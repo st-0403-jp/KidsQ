@@ -11,12 +11,16 @@ var cashClearTime = new Date().getTime();
 
 var ejsMain = [
     {
-        title: 'トップ',
+        title: 'KidsQ',
         fileName: 'index'
     },
     {
         title: 'とは',
         fileName: 'about'
+    },
+    {
+        title: 'クイズ',
+        fileName: 'quiz'
     }
 ];
 
@@ -33,7 +37,7 @@ gulp.task('ejs', function () {
     });
 });
 gulp.task('less', function () {
-    return gulp.src('src/less/common.less')
+    return gulp.src('src/less/*.less')
             .pipe(less())
             .pipe(gulp.dest('build/css'));
 });
