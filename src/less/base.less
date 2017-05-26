@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #f7eb4b;
+    color: #58531c;
+    font-size: 14px;
+    ul, ol {
+        list-style-type: none;
+    }
+    a {
+        &:link {
+            text-decoration: none;
+        }
+        &:visited {
+            color: #f90;
+        }
+    }
+}
+header {
+    background-color: #fef898;
+    height: 30px;
+}
+footer {
+    background-color: #fef898;
+    text-align: center;
+    height: 40px;
+}
+main {
+    .cmn_btn (@back: #555; @border: #222) {
+        display: inline-block;
+        background-color: @back;
+        width: 70%;
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        border-radius: 10px;
+        border-bottom: 4px solid @border;
+        &:visited {
+            color: #fff;
+        }
+    }
+    .cmn_btn-red {
+        .cmn_btn(#ff6a59; #db5c4d);
+    }
+    .cmn_btn-blue {
+        .cmn_btn(#59a9ff; #4d91dc);
+    }
+    .cmn_btn-green {
+        .cmn_btn(#76e646; #64c63b);
+    }
+    .cmn_more-text-link {
+        text-align: right;
+        a {
+            position: relative;
+            &:visited {
+                color: #58531c;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: -25px;
+                margin: auto;
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-top-color: #58531c;
+                border-radius: 5px;
+            }
+        }
+    }
+    .cmn_list-box-01 {
+        border-radius: 5px;
+        background-color: transparent;
+        border-bottom: 5px solid #ded23e;
+        li {
+            position: relative;
+            background-color: #fff;
+            padding: 0.7em 1em;
+            margin-top: 5px;
+            &:first-child {
+                border-radius: 5px 5px 0 0;
+            }
+            &:last-child {
+                border-radius: 0 0 5px 5px;
+            }
+        }
+    }
+}
+nav {
+    #cmn_global-nav {
+        font-size: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+        li {
+            display: inline-block;
+            font-size: 14px;
+            width: 33%;
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
