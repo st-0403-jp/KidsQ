@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>kidsQ｜クイズアプリ</title>
+    </head>
+    <body>
+        <ul>
+        <%
+        fileData.forEach(function (file) {
+        %>
+            <li><a href="main/<%= file.fileName %>.php" target="_blank"><%= file.title %></a></li>
+        <% }); %>
+        </ul>
+    </body>
+</html>
