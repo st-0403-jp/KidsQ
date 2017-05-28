@@ -16,11 +16,15 @@ var ejsMain = [
     },
     {
         title: 'とは',
-        fileName: 'about'
+        fileName: 'about',
+        js: ''
     },
     {
         title: 'クイズ',
-        fileName: 'quiz'
+        fileName: 'quiz',
+        js: [
+        'modal'
+        ]
     }
 ];
 
@@ -28,8 +32,7 @@ gulp.task('ejs', function () {
     return ejsMain.forEach(function (file, ejsMainIndex) {
         gulp.src(['src/ejs/layout.ejs'])
             .pipe(ejs({
-                file: file.fileName,
-                title: file.title,
+                fileData: file,
                 cashClearQuery: cashClearTime
             }))
             .pipe(rename('main/' + file.fileName + '.php'))
@@ -40,6 +43,10 @@ gulp.task('less', function () {
     return gulp.src('src/less/*.less')
             .pipe(less())
             .pipe(gulp.dest('build/css'));
+});
+gulp.task('js', function () {
+    return gulp.src('src/js/*.js')
+            .pipe(gulp.dest('build/js'));
 });
 gulp.task('mock', function () {
     return gulp.src('src/ejs/mock.ejs')
@@ -52,6 +59,7 @@ gulp.task('lib', function () {
 gulp.task('watch', function () {
     gulp.watch(['src/ejs/*.ejs', 'src/ejs/main/*.ejs'], ['ejs', 'mock']);
     gulp.watch(['src/less/*.less'], ['less']);
+    gulp.watch(['src/js/*.js'], ['js']);
 });
 gulp.task('clean', function () {
     gulp.src('build/*').pipe(clean());

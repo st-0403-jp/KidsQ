@@ -8,12 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../lib/sanitize.css">
         <link rel="stylesheet" type="text/css" href="../css/common.css?<%= cashClearQuery %>">
-        <link rel="stylesheet" type="text/css" href="../css/<%= file %>.css?<%= cashClearQuery %>">
-        <title><%= title %></title>
+        <link rel="stylesheet" type="text/css" href="../css/<%= fileData.fileName %>.css?<%= cashClearQuery %>">
+        <title><%= fileData.title %></title>
     </head>
     <body>
         <%- include('./header', {}) %>
-        <%- include('./main/' + file, {}) %>
+        <%- include('./main/' + fileData.fileName, {}) %>
         <%- include('./footer', {}) %>
+        <% if (fileData.js) {
+            fileData.js.forEach(function (jsFile) {
+        %>
+            <script type="text/javascript" src="../js/<%= jsFile %>.js"></script>
+        <% }); } %>
     </body>
 </html>
