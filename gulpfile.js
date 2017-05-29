@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var ejs = require('gulp-ejs');
 var rename = require('gulp-rename');
+var babel = require('gulp-babel');
 
 var cashClearTime = new Date().getTime();
 
@@ -46,6 +47,7 @@ gulp.task('less', function () {
 });
 gulp.task('js', function () {
     return gulp.src('src/js/*.js')
+            .pipe(babel())
             .pipe(gulp.dest('build/js'));
 });
 gulp.task('mock', function () {
