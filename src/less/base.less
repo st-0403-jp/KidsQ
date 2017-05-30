@@ -7,8 +7,12 @@ body {
     background-color: #f7eb4b;
     color: #58531c;
     font-size: 14px;
+    font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'helvetica', 'arial', sans-serif;
     ul, ol {
         list-style-type: none;
+    }
+    ul, ol, p {
+        font-weight: bold;
     }
     a {
         &:link {
@@ -21,7 +25,14 @@ body {
 }
 header {
     background-color: #fef898;
-    height: 30px;
+    min-height: 30px;
+    padding: 0.3em 0;
+    h1 {
+        text-align: center;
+        img {
+            width: 80px;
+        } 
+    }
 }
 footer {
     background-color: #fef898;
@@ -34,7 +45,7 @@ main {
         background-color: @back;
         width: 70%;
         font-size: 1.2em;
-        padding: 0.5em 1em;
+        padding: 0.7em 1em;
         text-decoration: none;
         text-align: center;
         color: #fff;

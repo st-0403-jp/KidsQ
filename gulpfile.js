@@ -56,7 +56,12 @@ gulp.task('mock', function () {
             .pipe(gulp.dest('build'));
 });
 gulp.task('lib', function () {
-   gulp.src('src/lib/*').pipe(gulp.dest('build/lib')); 
+    return gulp.src('src/lib/*')
+            .pipe(gulp.dest('build/lib'));
+});
+gulp.task('img', function () {
+    return gulp.src('img/*')
+            .pipe(gulp.dest('build/img'));
 });
 gulp.task('watch', function () {
     gulp.watch(['src/ejs/*.ejs', 'src/ejs/main/*.ejs'], ['ejs', 'mock']);

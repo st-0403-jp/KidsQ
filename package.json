@@ -18,9 +18,9 @@
     "gulp-uglify": "~1.5.1"
   },
   "scripts": {
-    "prestart": "gulp ejs & gulp less & gulp js & gulp lib & gulp mock",
+    "prestart": "gulp ejs & gulp less & gulp js & gulp lib & gulp img & gulp mock",
     "start": "gulp watch",
-    "build": "gulp ejs & gulp less & gulp js & gulp lib & gulp mock"
+    "build": "gulp ejs & gulp less & gulp js & gulp lib & gulp img & gulp mock"
   },
   "author": "Satoru Tanaka & Professor Hayashi",
   "license": "ISC"
