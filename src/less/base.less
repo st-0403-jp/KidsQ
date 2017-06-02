@@ -22,6 +22,32 @@ body {
             color: #f90;
         }
     }
+    .cmn_icon-mixin (@url) {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(@url);
+    }
+    .cmn_icon-question {
+        position: relative;
+        &::before {
+            .cmn_icon(../img/q_icon.gif);
+        }
+    }
+    .cmn_icon-list {
+        position: relative;
+        &::before {
+            .cmn_icon(../img/li_icon.gif);
+        }
+    }
+    .cmn_icon-ranking {
+        position: relative;
+        &::before {
+            .cmn_icon(../img/rank_icon.gif);
+        }
+    }
 }
 header {
     background-color: #fef898;
@@ -113,10 +139,33 @@ nav {
         text-align: center;
         li {
             display: inline-block;
-            font-size: 14px;
-            width: 33%;
+            vertical-align: top;
+            font-size: 12px;
+            width: 30%;
+            padding: 0.7em 0;
             a {
                 color: #fff;
+                &.cmn_icon-question::before {
+                    position: absolute;
+                    top: 0;
+                    left: -18px;
+                    bottom: 0;
+                    margin: auto;
+                }
+                &.cmn_icon-list::before {
+                    position: absolute;
+                    top: 0;
+                    left: -18px;
+                    bottom: 0;
+                    margin: auto;
+                }
+                &.cmn_icon-ranking::before {
+                    position: absolute;
+                    top: 0;
+                    left: -23px;
+                    bottom: 0;
+                    margin: auto;
+                }
             }
         }
     }
