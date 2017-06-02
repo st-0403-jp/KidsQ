@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url(mixin.less);
+
 * {
     box-sizing: border-box;
 }
@@ -22,30 +24,22 @@ body {
             color: #f90;
         }
     }
-    .cmn_icon-mixin (@url) {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(@url);
-    }
     .cmn_icon-question {
         position: relative;
         &::before {
-            .cmn_icon(../img/q_icon.gif);
+            .cmn_icon-mixin("../img/q_icon.gif");
         }
     }
     .cmn_icon-list {
         position: relative;
         &::before {
-            .cmn_icon(../img/li_icon.gif);
+            .cmn_icon-mixin("../img/li_icon.gif");
         }
     }
     .cmn_icon-ranking {
         position: relative;
         &::before {
-            .cmn_icon(../img/rank_icon.gif);
+            .cmn_icon-mixin("../img/rank_icon.gif");
         }
     }
 }
